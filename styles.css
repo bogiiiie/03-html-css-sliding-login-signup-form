@@ -1,0 +1,360 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+body {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+button,
+a {
+    cursor: pointer;
+}
+
+.input-wrapper:has(input[type="text"]),
+.input-wrapper:has(input[type="email"]),
+.input-wrapper:has(input[type="password"]) {
+    border: 2px solid transparent;
+    transition: all 0.3s ease;
+}
+
+.input-wrapper:has(input:focus) {
+    border-color: #111111; /* ❌ Not supported in most browsers yet */
+}
+
+input::placeholder {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+
+.auth-container {
+    width: 90%;
+    max-width: 750px;
+    height: 500px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: none;
+    border-radius: 20px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.263);
+    position: relative;
+}
+
+.form-panel {
+    width: 50%;
+    height: 100%;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.form-panel header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+}
+
+.social-links {
+    list-style: none;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+
+.social-links li {
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-links li:hover {
+    transform: scale(1.1);
+}
+
+.social-links li a {
+    font-size: 0.9rem;
+    color: whitesmoke;
+}
+
+.social-links .fb {
+    background-color: #1877f2;
+}
+
+.social-links .google {
+    background-color: #e1306c;
+}
+
+.social-links .linkedin {
+    background-color: #0077b5;
+}
+
+.form-panel fieldset {
+    border: none;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.form-panel fieldset legend {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.input-group-wrapper {
+    width: 100%;
+    display: flex;
+
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.input-group-wrapper input:focus {
+    outline: none;
+    border: none;
+    box-shadow: none;
+}
+
+
+fieldset .username-wrapper,
+fieldset .email-wrapper,
+fieldset .password-wrapper,
+fieldset .confirm-password-wrapper {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    background-color: #eaeaea;
+    padding: 10px;
+    border-radius: 7px;
+}
+
+.form-signup fieldset .username-wrapper,
+fieldset .email-wrapper {
+    width: calc(50% - 5px);
+}
+
+.form-signin fieldset .email-wrapper,
+fieldset .password-wrapper,
+fieldset .confirm-password-wrapper {
+    width: 100%;
+}
+
+fieldset div i {
+    color: rgb(108, 108, 108);
+}
+
+fieldset .username-wrapper input,
+fieldset .email-wrapper input,
+fieldset .password-wrapper input,
+fieldset .confirm-password-wrapper input {
+    background-color: transparent;
+    border: none;
+    font-size: 0.9rem;
+    width: 100%;
+}
+
+.rememberMe-forgotPass-wrapper {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+.terms-wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    font-size: 0.8rem;
+    gap: 5px;
+    cursor: pointer;
+    flex-wrap: wrap;
+}
+
+.terms-wrapper label,
+.terms-wrapper input {
+    cursor: pointer;
+}
+
+.rememberMe-forgotPass-wrapper label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.rememberMe-forgotPass-wrapper a,
+.terms-wrapper a,
+.auth__message label {
+    text-decoration: none;
+    color: rgb(140, 38, 248);
+}
+
+.rememberMe-forgotPass-wrapper a:hover,
+.terms-wrapper a:hover,
+.auth__message label:hover {
+    text-decoration: underline;
+}
+
+#remember {
+    cursor: pointer;
+}
+
+.form-panel button[type="submit"] {
+    width: 100%;
+    font-size: 1rem;
+    padding: 10px;
+    border-radius: 7px;
+    border: none;
+    color: whitesmoke;
+    background-color: rgb(140, 38, 248);
+    transition: all 0.3s ease;
+}
+
+.form-panel button[type="submit"]:hover {
+    background-color: rgba(37, 117, 252, 1);
+}
+
+.auth__message {
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: none;
+}
+
+aside {
+    width: 50%;
+    height: 100%;
+    background: #2575fc;
+    background: linear-gradient(131deg,
+            rgba(37, 117, 252, 1) 0%,
+            rgba(70, 69, 229, 1) 32%,
+            rgba(106, 17, 203, 1) 67%);
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px;
+    border-radius: 0 20px 20px 0;
+    position: absolute;
+    right: 0;
+}
+
+.aside-content {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+}
+
+.btn-outline {
+    font-size: 0.9rem;
+    border-radius: 25px;
+    border: 2px solid whitesmoke;
+    padding: 10px 20px;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.btn-outline:hover {
+    color: #6a11cb;
+    background-color: white;
+}
+
+.auth-container .aside,
+.auth-container .aside-content {
+    transition: all 0.3s ease-in-out;
+}
+
+/* Toggle functionality */
+#form-toggle:checked~.auth-container aside {
+    border-radius: 20px 0 0 20px;
+}
+
+#form-toggle:checked~.auth-container aside {
+    right: 50%
+}
+
+#form-toggle:checked~.auth-container .sign-up-content-aside {
+    display: none;
+}
+
+#form-toggle:not(:checked)~.auth-container .sign-up-content-aside {
+    display: flex;
+}
+
+#form-toggle:not(:checked)~.auth-container .sign-in-content-aside {
+    display: none;
+}
+
+@media (max-width: 690px) {
+    .auth-container {
+        border: none;
+        box-shadow: none;
+        width: 100%;
+        max-width: 450px;
+    }
+
+    .auth-container aside {
+        display: none;
+    }
+
+    .form-panel {
+        width: 100%;
+    }
+
+    #form-toggle:checked~.auth-container .form-signup {
+        display: none;
+    }
+
+    #form-toggle:not(:checked)~.auth-container .form-signup {
+        display: flex;
+    }
+
+    #form-toggle:not(:checked)~.auth-container .form-signin {
+        display: none;
+    }
+
+    .auth__message {
+        display: block;
+    }
+}

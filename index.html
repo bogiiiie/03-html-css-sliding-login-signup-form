@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Sign in to your account using your email or social media credentials."
+    />
+    <meta
+      name="keywords"
+      content="signin, sign in, user authentication, secure signin"
+    />
+    <meta name="author" content="Stephen William G. De Jesus" />
+    <title>Sign In Page</title>
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons/font/bootstrap-icons.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+
+  <body>
+    <input type="checkbox" id="form-toggle" hidden />
+    <div class="auth-container">
+      <!-- Sign In Form -->
+      <form
+        class="form-panel form-signin"
+        action="#"
+        method="POST"
+        aria-labelledby="signin-heading"
+      >
+        <header>
+          <h2 id="signin-heading">Sign In</h2>
+          <p>Use your account</p>
+        </header>
+
+        <nav aria-label="Social sign-in options">
+          <ul class="social-links">
+            <li class="fb">
+              <a href="#" aria-label="Sign in with Facebook"
+                ><i class="bi bi-facebook" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="google">
+              <a href="#" aria-label="Sign in with Google"
+                ><i class="bi bi-google" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="linkedin">
+              <a href="#" aria-label="Sign in with LinkedIn"
+                ><i class="bi bi-linkedin" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+
+        <fieldset>
+          <legend>or use your email account</legend>
+
+          <div class="input-group-wrapper">
+            <div class="email-wrapper input-wrapper">
+              <i class="bi bi-envelope-fill"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="password-wrapper input-wrapper">
+              <i class="bi bi-lock-fill"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="rememberMe-forgotPass-wrapper">
+            <label for="remember" id="rememberMe">
+              <input type="checkbox" id="remember" name="remember" />Remember
+              me</label
+            >
+            <a href="#" class="forgotPass">Forgot Password?</a>
+          </div>
+
+          <button type="submit">Sign In</button>
+
+          <p class="auth__message">
+            Don't have an account?
+            <label href="" for="form-toggle" class="auth__link--signup">Sign up</label>
+          </p>
+        </fieldset>
+      </form>
+
+      <!-- Sign Up Form -->
+      <form
+        class="form-panel form-signup"
+        action="#"
+        method="POST"
+        aria-labelledby="signup-heading"
+      >
+        <header>
+          <h2 id="signup-heading">Sign Up</h2>
+          <p>Use your account</p>
+        </header>
+
+        <nav aria-label="Social sign-in options">
+          <ul class="social-links">
+            <li class="fb">
+              <a href="#" aria-label="Sign in with Facebook"
+                ><i class="bi bi-facebook" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="google">
+              <a href="#" aria-label="Sign in with Google"
+                ><i class="bi bi-google" aria-hidden="true"></i
+              ></a>
+            </li>
+            <li class="linkedin">
+              <a href="#" aria-label="Sign in with LinkedIn"
+                ><i class="bi bi-linkedin" aria-hidden="true"></i
+              ></a>
+            </li>
+          </ul>
+        </nav>
+
+        <fieldset>
+          <legend>or use your email account</legend>
+
+          <div class="input-group-wrapper">
+            <div class="username-wrapper input-wrapper">
+              <i class="bi bi-person-fill"></i>
+              <input
+                type="text"
+                id="username"
+                name="username"
+                placeholder="Username"
+                required
+              />
+            </div>
+
+            <div class="email-wrapper input-wrapper">
+              <i class="bi bi-envelope-fill"></i>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="Email"
+                required
+              />
+            </div>
+
+            <div class="password-wrapper input-wrapper">
+              <i class="bi bi-lock-fill"></i>
+              <input
+                type="password"
+                id="password"
+                name="password"
+                placeholder="Password"
+                required
+              />
+            </div>
+
+            <div class="confirm-password-wrapper input-wrapper">
+              <i class="bi bi-shield-lock"></i>
+              <input
+                type="password"
+                id="confirm-password"
+                name="confirm_password"
+                placeholder="Confirm Password"
+                required
+              />
+            </div>
+          </div>
+
+          <div class="terms-wrapper">
+            <input type="checkbox" id="terms" name="terms" required />
+            <label for="terms"
+              >I agree to the <a href="#">terms and conditions</a></label
+            >
+          </div>
+
+          <button type="submit">Create Account</button>
+
+          <p class="auth__message">
+            Already have an account?
+            <label href="" for="form-toggle" class="auth__link--signin">Sign in</label>
+          </p>
+        </fieldset>
+      </form>
+
+      <!-- Aside Section -->
+      <aside class="aside">
+        <!-- Content shown when on sign in panel -->
+        <div class="aside-content sign-up-content-aside">
+          <h2>New Here, Bro?</h2>
+          <p>Enter your personal details to use all features</p>
+          <label for="form-toggle" class="btn-outline btn-signup"
+            >Sign Up</label
+          >
+        </div>
+
+        <!-- Content shown when on sign up panel -->
+        <div class="aside-content sign-in-content-aside">
+          <h2>Welcome Back!</h2>
+          <p>Enter your personal details to use all features.</p>
+          <label for="form-toggle" class="btn-outline btn-sign-in"
+            >Sign In</label
+          >
+        </div>
+      </aside>
+    </div>
+  </body>
+</html>
